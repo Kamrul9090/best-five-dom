@@ -16,6 +16,7 @@ function display(array) {
         // step - 2: Create list
         lists.innerHTML = `<li>${i + 1}. ${element}</li>`
         orderList.appendChild(lists);
+        expensesCalculate(i)
     }
 }
 
@@ -58,10 +59,15 @@ function setElementText(elementId, value) {
 
 //step-3: calculate per player budget
 
-document.getElementById("calculate-per-budget").addEventListener("click", function () {
-    const perPlayerBudget = inputFieldValue("player-value");
-    setElementText("total-expenses", perPlayerBudget);
-})
+function expensesCalculate(index) {
+    document.getElementById("calculate-per-budget").addEventListener("click", function () {
+        const perPlayerBudget = inputFieldValue("player-value");
+        const player = index + 1;
+        const totalBudget = perPlayerBudget * player;
+        setElementText("total-expenses", totalBudget);
+
+    })
+}
 
 //step-4: add handler in calculate total element
 
