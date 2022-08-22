@@ -1,21 +1,41 @@
 
+const playerObj = [];
+
+
+function display(array) {
+    const orderList = document.getElementById("order-list");
+    const lists = document.createElement("ol");
+    for (let i = 0; i < array.length; i++) {
+
+        lists.innerText = "";
+        const element = array[i].playerName;
+        if (i >= 5) {
+            alert("You can select 5 player");
+            break;
+        }
+        // step - 2: Create list
+        lists.innerHTML = `<li>${i + 1}. ${element}</li>`
+        orderList.appendChild(lists);
+    }
+}
+
 //step-1: add handler select button 
 const btn = document.getElementsByClassName("btn-select");
 for (let button of btn) {
     button.addEventListener("click", function (e) {
+        this.classList = "disabled";
         const name = e.target.parentNode.parentNode.children[0].innerText;
 
+        const object = {
+            playerName: name,
+        }
 
-        // step-2: Create list
-        const orderList = document.getElementById("order-list");
-
-        const lists = document.createElement("ol");
-        const list = document.createElement("li");
-        list.innerText = name;
-        lists.appendChild(list);
-        orderList.appendChild(lists);
+        playerObj.push(object);
+        display(playerObj)
     })
 };
+
+
 
 
 // Step-5: create a function for inputField value
@@ -23,7 +43,6 @@ function inputFieldValue(inputId) {
     const inputElement = document.getElementById(inputId);
     const inputElementValue = inputElement.value;
     const inputElementNumber = parseFloat(inputElementValue);
-    inputElement.value = "";
     return inputElementNumber;
 }
 
@@ -51,13 +70,18 @@ document.getElementById("total-calculate").addEventListener("click", function ()
     const coathBudget = inputFieldValue("coach-budget");
     const perPlayerValue = inputFieldValue("player-value");
 
-    //step-5: calculate total Amount
+    calculate(managerBudget, coathBudget, perPlayerValue);
 
-    const totalAmount = (perPlayerValue + managerBudget + coathBudget).toFixed(2);
-    const total = parseFloat(totalAmount);
-    //step-6: set value
-    setElementText("total-amount", total);
 })
 
 
 
+
+//step-5: calculate total Amount
+function calculate(managerBudget, coathBudget, perPlayerValue) {
+
+    const totalAmount = (perPlayerValue + managerBudget + coathBudget);
+    const total = parseFloat(totalAmount);
+    //step-6: set value
+    setElementText("total-amount", total);
+}
