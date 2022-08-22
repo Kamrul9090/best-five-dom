@@ -63,7 +63,6 @@ function budgetCalculate(index) {
         const perPlayerBudget = inputFieldValue("player-value");
         const player = index + 1;
         const totalBudget = perPlayerBudget * player;
-        console.log(typeof totalBudget, totalBudget)
         setElementText("total-expenses", totalBudget);
 
 
@@ -83,27 +82,10 @@ function budgetCalculate(index) {
 }
 
 
-
-//step-4: add handler in calculate total element
-
-document.getElementById("total-calculate").addEventListener("click", function () {
-    const managerBudget = inputFieldValue("manager-budget");
-    const coathBudget = inputFieldValue("coach-budget");
-
-
-    calculate(managerBudget, coathBudget, totalBudget);
-
-})
-
-
-
-
-
-
 //step-5: calculate total Amount
-function calculate(managerBudget, coathBudget, perPlayerValue) {
+function calculate(managerBudget, coathBudget, totalBudget) {
 
-    const totalAmount = (perPlayerValue + managerBudget + coathBudget);
+    const totalAmount = (totalBudget + managerBudget + coathBudget);
     const total = parseFloat(totalAmount);
     //step-6: set value
     setElementText("total-amount", total);
