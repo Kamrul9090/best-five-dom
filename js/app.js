@@ -16,7 +16,7 @@ function display(array) {
         // step - 2: Create list
         lists.innerHTML = `<li>${i + 1}. ${element}</li>`
         orderList.appendChild(lists);
-        expensesCalculate(i)
+        budgetCalculate(i)
     }
 }
 
@@ -24,15 +24,14 @@ function display(array) {
 const btn = document.getElementsByClassName("btn-select");
 for (let button of btn) {
     button.addEventListener("click", function (e) {
-        this.classList = "disabled";
         const name = e.target.parentNode.parentNode.children[0].innerText;
-
+        this.setAttribute("disabled", "");
         const object = {
             playerName: name,
         }
 
         playerObj.push(object);
-        display(playerObj)
+        display(playerObj);
     })
 };
 
@@ -57,28 +56,46 @@ function setElementText(elementId, value) {
 }
 
 
-//step-3: calculate per player budget
+//step-3: calculate player budget
 
-function expensesCalculate(index) {
+function budgetCalculate(index) {
     document.getElementById("calculate-per-budget").addEventListener("click", function () {
         const perPlayerBudget = inputFieldValue("player-value");
         const player = index + 1;
         const totalBudget = perPlayerBudget * player;
+        console.log(typeof totalBudget, totalBudget)
         setElementText("total-expenses", totalBudget);
+
+
+
+        //step-4: add handler in calculate total element
+
+        document.getElementById("total-calculate").addEventListener("click", function () {
+            const managerBudget = inputFieldValue("manager-budget");
+            const coathBudget = inputFieldValue("coach-budget");
+
+
+            calculate(managerBudget, coathBudget, totalBudget);
+
+        })
 
     })
 }
+
+
 
 //step-4: add handler in calculate total element
 
 document.getElementById("total-calculate").addEventListener("click", function () {
     const managerBudget = inputFieldValue("manager-budget");
     const coathBudget = inputFieldValue("coach-budget");
-    const perPlayerValue = inputFieldValue("player-value");
 
-    calculate(managerBudget, coathBudget, perPlayerValue);
+
+    calculate(managerBudget, coathBudget, totalBudget);
 
 })
+
+
 
 
 
