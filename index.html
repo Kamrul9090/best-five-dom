@@ -55,7 +55,7 @@
                         <h2 class="card-title">Mesut Ozil</h2>
                         <p><span>120 Goals</span> . <span>220 Assist</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary">SELECT</button>
+                            <button id="" class="btn btn-primary btn-select">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <h2 class="card-title">Messi</h2>
                         <p><span>770</span> . <span>400 Assist</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary">SELECT</button>
+                            <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -81,21 +81,21 @@
                         <h2 class="card-title">Ramos</h2>
                         <p><span>100 Goals</span> . <span>200 Assist</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary">SELECT</button>
+                            <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
                     </div>
                 </div>
                 <!-- List Section -->
                 <div class="w-full bg-base-100 shadow-xl">
                     <h1 class="text-center mt-5 text-2xl font-semibold text-white">Selected Player</h1>
-                    <div>
-                        <ol class="">
+                    <div id="order-list">
+                        <!-- <ol class="">
                             <li>Mesut Ozil</li>
                             <li>Messi</li>
                             <li>Neymar</li>
                             <li>Ronaldo</li>
                             <li>Ramos</li>
-                        </ol>
+                        </ol> -->
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                         <h2 class="card-title">M Bappe</h2>
                         <p><span>200</span> . <span>230 Assist</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary">SELECT</button>
+                            <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         <h2 class="card-title">Neymar</h2>
                         <p><span>400</span> . <span>200 Assist</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary">SELECT</button>
+                            <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -134,35 +134,37 @@
                         <h2 class="card-title">Karim Benzema</h2>
                         <p><span>430 Goals</span> . <span>120 Assist</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary">SELECT</button>
+                            <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
                     </div>
                 </div>
                 <!-- Budget section -->
 
-                <div class="w-full bg-gray-500 shadow-xl text-center text-white">
+                <div class="w-full bg-gray-500 shadow-xl text-center">
                     <h1 class="text-2xl font-bold text-indigo-800 mb-5">Budget</h1>
                     <div class="flex flex-column justify-around mb-5">
                         <span>Per Player</span>
-                        <input type="text" class="w-6/12">
+                        <input id="player-value" type="text" class="w-6/12">
                     </div>
-                    <button class="w-64 mx-auto text-white bg-indigo-600 mb-5">Calculate</button>
+                    <button id="calculate-per-budget"
+                        class="w-64 mx-auto text-white bg-indigo-600 mb-5">Calculate</button>
                     <div class=" mb-5">
                         <p>Player Expenses
-                            <small class="ml-2">$<span>5000</small>
+                            <small class="ml-2">$<span id="total-expenses">00</small>
                         </p>
                         </p>
                     </div>
                     <div class="flex flex-column justify-around mb-5">
                         <span>Manager</span>
-                        <input type="text" class="w-6/12">
+                        <input id="manager-budget" type="text" class="w-6/12">
                     </div>
                     <div class="flex flex-column justify-around mb-5">
                         <span>Coach</span>
-                        <input type="text" class="w-6/12">
+                        <input id="coach-budget" type="text" class="w-6/12">
                     </div>
-                    <button class="w-64 mx-auto bg-indigo-600 text-white mb-5">Calculate Total</button>
-                    <p class="flex justify-around">Total<small>$<span>1000</span></small></p>
+                    <button class="w-64 mx-auto bg-indigo-600 text-white mb-5" id="total-calculate">Calculate
+                        Total</button>
+                    <p class="flex justify-around">Total<small>$<span id="total-amount">00</span></small></p>
                 </div>
             </div>
         </section>
