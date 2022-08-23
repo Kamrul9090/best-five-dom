@@ -1,10 +1,13 @@
 
 const playerObj = [];
 
+//step-2: create display function 
 
 function display(array) {
     const orderList = document.getElementById("order-list");
     const lists = document.createElement("ol");
+    lists.style.marginLeft = '20px';
+    lists.style.color = "white";
     for (let i = 0; i < array.length; i++) {
 
         lists.innerText = "";
@@ -13,8 +16,9 @@ function display(array) {
             alert("You can select 5 player");
             break;
         }
-        // step - 2: Create list
-        lists.innerHTML = `<li>${i + 1}. ${element}</li>`
+        // step - 3: Create list
+        document.getElementById("player-count").innerText = i + 1;
+        lists.innerHTML = `<li class="font-bold">${i + 1}. ${element}</li>`
         orderList.appendChild(lists);
         budgetCalculate(i)
     }
@@ -38,7 +42,7 @@ for (let button of btn) {
 
 
 
-// Step-5: create a function for inputField value
+// Step-4: create a function for inputField value
 function inputFieldValue(inputId) {
     const inputElement = document.getElementById(inputId);
     const inputElementValue = inputElement.value;
@@ -46,7 +50,7 @@ function inputFieldValue(inputId) {
     return inputElementNumber;
 }
 
-// step-6: create a function for setElement value
+// step-5: create a function for setElement value
 
 function setElementText(elementId, value) {
     const element = document.getElementById(elementId);
@@ -56,7 +60,7 @@ function setElementText(elementId, value) {
 }
 
 
-//step-3: calculate player budget
+//step-6: calculate player budget
 
 function budgetCalculate(index) {
     document.getElementById("calculate-per-budget").addEventListener("click", function () {
@@ -66,8 +70,7 @@ function budgetCalculate(index) {
         setElementText("total-expenses", totalBudget);
 
 
-
-        //step-4: add handler in calculate total element
+        //step-7: add handler in calculate total element
 
         document.getElementById("total-calculate").addEventListener("click", function () {
             const managerBudget = inputFieldValue("manager-budget");
@@ -82,11 +85,13 @@ function budgetCalculate(index) {
 }
 
 
-//step-5: calculate total Amount
+//step-8: calculate total Amount
 function calculate(managerBudget, coathBudget, totalBudget) {
 
-    const totalAmount = (totalBudget + managerBudget + coathBudget);
-    const total = parseFloat(totalAmount);
+    const totalAmount = totalBudget + managerBudget + coathBudget;
+    const totalAmountFixed = totalAmount.toFixed(2);
+    const totalAmountNumber = parseFloat(totalAmountFixed)
+    console.log(totalAmountNumber)
     //step-6: set value
-    setElementText("total-amount", total);
+    setElementText("total-amount", totalAmountNumber);
 }

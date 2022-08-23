@@ -12,12 +12,19 @@
 
     <style>
         header {
-            background-image: url(img/banner.png);
+            background-image: url(img/banner-1.png);
             width: 100%;
             height: 100vh;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+
+        body {
+            background-image: url(img/41932.jpg);
+            background-position: center;
+            background-size: contain;
+            background-size: 200px;
         }
     </style>
 </head>
@@ -27,9 +34,10 @@
     <!-- Header section -->
     <header class="flex justify-center items-center">
         <div class="text-center">
-            <h1 class="text-orange-600 text-5xl font-bold italic">Most Expensive Player Budget
+            <h1 class="text-indigo-600 text-5xl font-bold italic">Most Expensive Player Budget
             </h1>
-            <p class="text-white mt-5">Football is the world’s most popular ball game in numbers of participants and
+            <p class="text-black font-bold mt-5">Football is the world’s most popular ball game in numbers of
+                participants and
                 spectators. Simple in its
                 principal rules and essential equipment, the sport can be played almost anywhere, from official football
                 playing fields (pitches) to gymnasiums, streets, school playgrounds, parks, or beaches.</p>
@@ -37,16 +45,16 @@
     </header>
 
     <!--Players Card section -->
-    <main class="w-11/12 mt-12">
+    <main class="w-11/12 mx-auto mt-12">
         <section>
-            <div class="grid grid-cols-4 gap-2">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-2">
                 <!-- card- 1 -->
                 <div class="card w-full bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
+                    <figure class="px-5 pt-5">
                         <img src="img/player (1).png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Mesut Ozil</h2>
+                        <h2 class="card-title text-white">Mesut Ozil</h2>
                         <p><span>120 Goals</span> . <span>220 Assist</span></p>
                         <div class="card-actions">
                             <button class="btn btn-primary btn-select">SELECT</button>
@@ -55,12 +63,12 @@
                 </div>
                 <!-- card- 2 -->
                 <div class="card w-full bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
+                    <figure class="px-5 pt-5">
                         <img src="img/player (2).png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Messi</h2>
-                        <p><span>770</span> . <span>400 Assist</span></p>
+                        <h2 class="card-title text-white">Messi</h2>
+                        <p><span>770 Goals</span> . <span>400 Assist</span></p>
                         <div class="card-actions">
                             <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
@@ -68,11 +76,11 @@
                 </div>
                 <!-- card- 3 -->
                 <div class="card w-full bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
+                    <figure class="px-5 pt-5">
                         <img src="img/player (3).png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Ramos</h2>
+                        <h2 class="card-title text-white">Ramos</h2>
                         <p><span>100 Goals</span> . <span>200 Assist</span></p>
                         <div class="card-actions">
                             <button class="btn btn-primary btn-select">SELECT</button>
@@ -81,7 +89,10 @@
                 </div>
                 <!-- List Section -->
                 <div class="w-full bg-base-100 shadow-xl">
-                    <h1 class="text-center mt-5 text-2xl font-semibold text-white">Selected Player</h1>
+                    <h1
+                        class="text-center mt-5 text-2xl font-semibold text-white underline decoration-wavy  decoration-indigo-500">
+                        Selected
+                        Player - <span id="player-count">0</span></h1>
                     <div id="order-list">
 
                     </div>
@@ -89,12 +100,12 @@
 
                 <!-- card- 4 -->
                 <div class="card w-full bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
+                    <figure class="px-5 pt-5">
                         <img src="img/player (4).png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">M Bappe</h2>
-                        <p><span>200</span> . <span>230 Assist</span></p>
+                        <h2 class="card-title text-white">Kylian Mbappé</h2>
+                        <p><span>200 Goals</span> . <span>230 Assist</span></p>
                         <div class="card-actions">
                             <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
@@ -102,12 +113,12 @@
                 </div>
                 <!-- card- 5 -->
                 <div class="card w-full bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
+                    <figure class="px-5 pt-5">
                         <img src="img/player (5).png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Neymar</h2>
-                        <p><span>400</span> . <span>200 Assist</span></p>
+                        <h2 class="card-title text-white">Neymar</h2>
+                        <p><span>400 Goals</span> . <span>200 Assist</span></p>
                         <div class="card-actions">
                             <button class="btn btn-primary btn-select">SELECT</button>
                         </div>
@@ -115,11 +126,11 @@
                 </div>
                 <!-- card- 6 -->
                 <div class="card w-full bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
+                    <figure class="px-5 pt-5">
                         <img src="img/player (6).png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Karim Benzema</h2>
+                        <h2 class="card-title text-white">Karim Benzema</h2>
                         <p><span>430 Goals</span> . <span>120 Assist</span></p>
                         <div class="card-actions">
                             <button class="btn btn-primary btn-select">SELECT</button>
@@ -128,38 +139,81 @@
                 </div>
                 <!-- Budget section -->
 
-                <div class="w-full bg-gray-500 shadow-xl text-center">
+                <div class="w-full bg-gray-500 shadow-xl text-center font-bold">
                     <h1 class="text-2xl font-bold text-indigo-800 mb-5">Budget</h1>
                     <div class="flex flex-column justify-around mb-5">
-                        <span>Per Player</span>
-                        <input id="player-value" type="text" class="w-6/12">
+                        <span class="p-2 text-white">Per Player</span>
+                        <input id="player-value" type="text" class="w-6/12 p-2 rounded text-black">
                     </div>
                     <button id="calculate-per-budget"
-                        class="w-64 mx-auto text-white bg-indigo-600 mb-5">Calculate</button>
-                    <div class=" mb-5">
+                        class="w-64 mx-auto text-white bg-indigo-600 mb-5 p-2 rounded-xl">Calculate</button>
+                    <div class=" mb-5 text-white">
                         <p>Player Expenses
-                            <small class="ml-2">$<span id="total-expenses">00</small>
+                            <small class="ml-2">$<span id="total-expenses" class="text-indigo-800">00</small>
                         </p>
                         </p>
                     </div>
                     <div class="flex flex-column justify-around mb-5">
-                        <span>Manager</span>
-                        <input id="manager-budget" type="text" class="w-6/12">
+                        <span class="p-2 text-white text-white">Manager</span>
+                        <input id="manager-budget" type="text" class="w-6/12 rounded text-black">
                     </div>
                     <div class="flex flex-column justify-around mb-5">
-                        <span>Coach</span>
-                        <input id="coach-budget" type="text" class="w-6/12">
+                        <span class="p-2 text-white">Coach</span>
+                        <input id="coach-budget" type="text" class="w-6/12 rounded text-black">
                     </div>
-                    <button class="w-64 mx-auto bg-indigo-600 text-white mb-5" id="total-calculate">Calculate
+                    <button class="w-64 mx-auto bg-indigo-600 text-white mb-5 p-2 rounded-xl"
+                        id="total-calculate">Calculate
                         Total</button>
-                    <p class="flex justify-around">Total<small>$<span id="total-amount">00</span></small></p>
+                    <p class="flex justify-around text-white">Total<small>$<span id="total-amount"
+                                class="text-indigo-800">00</span></small></p>
+                </div>
+
+                <!-- card- 7 -->
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure class="px-5 pt-5">
+                        <img src="img/player (7).png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-white">Marcelo Vieira</h2>
+                        <p><span>100 Goals</span> . <span>220 Assist</span></p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary btn-select">SELECT</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card- 8 -->
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure class="px-5 pt-5">
+                        <img src="img/player (9).png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-white">Luka Modrić</h2>
+                        <p><span>120 Goals</span> . <span>300 Assist</span></p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary btn-select">SELECT</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card- 9 -->
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure class="px-5 pt-5">
+                        <img src="img/player (8).png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-white">Casemiro</h2>
+                        <p><span>90 Goals</span> . <span>200 Assist</span></p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary btn-select">SELECT</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="h-[200px] flex justify-center items-center text-white">
-        <p>Copyright @ 2022 All Rights Reserved.</p>
+    <footer class="h-[200px] flex justify-center items-center border-t-2 border-lime-800 mt-24">
+
+        <p class="text-black font-bold">Copyright @ 2022 All Rights Reserved.</p>
     </footer>
     <script src="./js/app.js"></script>
 </body>
